@@ -1,0 +1,17 @@
+\section{GAMYGDALA}
+In the Gamygdala world, Agents have goals they want to achieve. Based on their beliefs, they assess whether or not they have achieved their goals, and for example what's the likelihood to achieve their goals. Based on these properties and based on the relation with other agents, the agent's emotion is calculated. \\ \par
+
+Each Agent has a separate Goal base which they update every evaluation cycle. Whenever an event happens, the impact on a particular goal has to be provided. New agent-specific values like the goal likelihood, change in likelihood, the overall utility of the goal (how useful is it to achieve the goal) are then recalculated. Finally, a new emotion is distilled from all these particular properties. \\ \par
+
+Because each goal is unique and interchangeable, the engine itself also keeps track of all goals. \\ \par
+
+In the process to porting the Gamygdala engine from Javascript to Java, we have implemented a number of design patterns to better structure the code. Since Gamygdala was originally developed as a gaming engine, we had to separate the core logic from other facilitator functions. The core logic is also separated into classes with a single-responsibility and coupling is avoided wherever possible. \\ \par
+
+During an analysis of the code, we found out that he five main classes of the engine are:
+\begin{itemize}
+	\item \textbf{Agent} The agent which interacts with the environment.
+	\item \textbf{Goal} Goals which Agents want to achieve.
+	\item \textbf{Belief} Beliefs which alter the Agent’s view on the likelihood of achieving the goal.
+	\item \textbf{Emotion} The Emotion which an Agent has after processing Beliefs (based on its Goals).
+	\item \textbf{Relation} The Relation between two Agents.
+\end{itemize}
