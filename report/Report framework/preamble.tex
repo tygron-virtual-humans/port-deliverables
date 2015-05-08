@@ -1,0 +1,50 @@
+%%
+% Load packages.
+%%
+
+% Figures / images
+\usepackage{graphicx}
+
+% Line height
+\usepackage{setspace}
+
+% Text / background colors
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+
+% Font
+\usepackage[bitstream-charter]{mathdesign}
+\usepackage[T1]{fontenc}
+
+% Extended enumeration
+\usepackage{enumitem}
+
+% Syntax highlighting
+\usepackage{minted}
+\usepackage[scaled]{beramono}
+
+% Tables
+\usepackage{tabularx}
+
+% Page geometry
+\usepackage[a4paper,margin=3cm,bottom=2.5cm,top=2.5cm,footskip=1cm]{geometry}
+
+% Hyperlinks
+\usepackage{hyperref}
+
+
+
+%%
+% Set-up packages
+%%
+
+% Hyperlink colors
+\hypersetup{
+  colorlinks = true, %Colours links instead of ugly boxes
+  urlcolor	 = blue, %Colour for external hyperlinks
+  linkcolor	 = blue, %Colour of internal links
+  citecolor	 = red	 %Colour of citations
+}
+
+% Highlighting style
+\usemintedstyle{colorful}
+\newminted{java}{breaklines=true}
