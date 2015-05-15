@@ -1,35 +1,35 @@
 \section{Product Backlog}
-In this section you can find the product backlog for our part of the project. It is made using the MoSCoW method.
+In this section you can find the product backlog for our part of the project. It is made using the MoSCoW method. This method consists of four sections; Must have, Should have, Could have, Won't have. The user stories can be split into these sections to get a good overview of the important and less important aspects of the product.
 
 \subsection{User stories of features}
 \paragraph{Must have} 
 \begin{itemize}
-\item There needs to be a fully functional port for GAMYGDALA to Java.
-\item The GAMYGDALA plugin needs to work in GOAL.
-\item The plugin must work without fatal problems.
+\item There needs to be a fully functional port for \gls{GAMYGDALA} to Java.
+\item The \gls{GAMYGDALA} plugin needs to work in \gls{GOAL}.
+\item The plugin must work without fatal problems, like frozen screens of the program closing itself.
 \end{itemize}
 
 \paragraph{Should have} 
 \begin{itemize}
-\item The plugin should work efficient, so that the programmer won't notice the calculation time.
+\item The plugin should work efficient, so that the programmer will not notice the calculation time.
 \item The plugin should work without any errors or failures. 
 \end{itemize}
 
 \paragraph{Could have} 
 \begin{itemize}
-\item There could be a plugin framework for GOAL, so that new plugins can easily be added.
+\item There could be a plugin framework for \gls{GOAL}, so that new plugins can easily be added.
 \end{itemize}
 
 \paragraph{Won't have} 
 \begin{itemize}
-\item There won't be new customizable emotions in GAMYGDALA on initialization of the plugin.
-\item There won't be automatic usage of the plugin. The programmer needs to use the plugin manually 
+\item There will not be new customizable emotions in \gls{GAMYGDALA} on initialization of the plugin.
+\item There will not be automatic usage of the plugin. The programmer needs to make a call to the \gls{GAMYGDALA} plugin within is \gls{GOAL} code.
 \end{itemize}
 
 \subsection{User stories of technical improvements}
 \paragraph{Must have} 
 \begin{itemize}
-\item The code must be implemented according to the Software Engineering principals.
+\item The code must be implemented according to the \gls{SEM}.
 \item The code must have a test percentage of at least 70\%.
 \item There must be unit tests as well as integration tests.
 \end{itemize}
@@ -37,7 +37,7 @@ In this section you can find the product backlog for our part of the project. It
 \paragraph{Should have} 
 \begin{itemize}
 \item There should be proper Javadoc for the code.
-\item The code should pass the checkstyle demands.
+\item The code should pass the \gls{Checkstyle} demands.
 \end{itemize}
 
 \paragraph{Could have} 
@@ -47,24 +47,24 @@ In this section you can find the product backlog for our part of the project. It
 
 \paragraph{Won't have} 
 \begin{itemize}
-\item There won't be an improvement over the standard GOAL framework.
-\item The functionality of GAMYGDALA will not be changed.
+\item There won't be an improvement over the standard \gls{GOAL} framework.
+\item The functionality of \gls{GAMYGDALA} will not be extended.
 \end{itemize}
 
 \subsection{User stories of know-how acquisition}
 \paragraph{Must have} 
 \begin{itemize}
-\item There must be a proper understanding of the GOAL code.
-\item There must be a proper understanding of the GAMYGDALA code.
-\item We must obtain and use the proper SCRUM skills.
+\item There must be a proper understanding of the \gls{GOAL} code.
+\item There must be a proper understanding of the \gls{GAMYGDALA} code.
+\item We must obtain and use the proper \gls{SCRUM} skills.
 \item We must obtain and finish the informationskills section.
-\item We must obtain knowledge about interactive design.
+\item We must obtain knowledge about interactive de\gls{SIG}n.
 \end{itemize}
 
 \paragraph{Should have} 
 \begin{itemize}
 \item We should have a global understanding of the other parts of this project.
-\item We should have an understanding of the GOAL programming language.
+\item We should have an understanding of the \gls{GOAL} programming language.
 \item We should have a good understanding of Git/GitHub.
 \end{itemize}
 
@@ -76,9 +76,12 @@ In this section you can find the product backlog for our part of the project. It
 
 \paragraph{Won't have} 
 \begin{itemize}
-\item We won't obtain a severe understanding of the Tygron engine.
+\item We won't obtain a severe understanding of the \gls{Tygron} engine.
 \item We won't obtain knowledge about other programming languages then the ones used in the plugin.
 \end{itemize}
 
 \subsection{Initial release plan}
-Our project is divided in three separate parts. We started by finding out what was expected from us and how we could start at working on the final product (getting an understanding of the GOAL programming language code). Then we ported GAMYGDALA to Java. The final and biggest part of this project is designing and implementing the final plugin using the previously acquired knowledge.
+Our project is divided in three separate parts. We started by finding out what was expected from us and how we could start at working on the final product (getting an understanding of the \gls{GOAL} programming language code). Then we ported \gls{GAMYGDALA} to Java. The final and biggest part of this project is de\gls{SIG}ning and implementing the final plugin using the previously acquired knowledge. \\ \par
+There are two major milestones in our release plan. These are the initial input by \gls{SIG} in week 6, and the final input by \gls{SIG} in week 9. \par 
+In week 6, we wan't to have a working, refactored and tested \gls{GAMYGDALA} port that follows the \gls{SEM}. We also want to have our first version of the \gls{GOAL} plugin. It needs to have a decent test coverage and it had to follow the \gls{SEM}. \par
+We will use the last weeks to process the feedback given by \gls{SIG} and improving the overall code and test coverage percentage. The last weeks will also be used to work on the documentation of the project as well as the documentation of the code. The final version will be delivered in week 9.
