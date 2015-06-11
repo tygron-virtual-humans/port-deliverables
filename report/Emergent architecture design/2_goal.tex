@@ -5,26 +5,26 @@ Our goal is to implement a plugin in the existing source code. To do this, we ne
 The GOAL source consists of two major parts: the grammar and the runtime. These parts can be characterized as the parser and interpreter respectively.
 
 \subsubsection{Grammar overview}
-In this section, the parts of the grammar that are relevant to the implementation of our custom action will be covered. \\ \par
+In this section, the parts of the grammar that are relevant to the implementation of our custom action will be covered. \\ 
 
-The grammar uses the antlr4 library to create clear grammar in .g4 files. It then uses this grammar to parse the program. We need to make sure that our custom action (also referred to as plugin) is correctly inserted in the existing grammar. \\ \par
+The grammar uses the antlr4 library to create clear grammar in .g4 files. It then uses this grammar to parse the program. We need to make sure that our custom action (also referred to as plugin) is correctly inserted in the existing grammar. \\ 
 
-The parsing consists of multiple levels. The first level is converting the plain text to collections of very basic expressions. The second level turns these basic expressions into clearer expressions. In this level, every action has its own class, for example. We need to make sure that such an action exists for our custom action, and that it is created when necessary. \\ \par
+The parsing consists of multiple levels. The first level is converting the plain text to collections of very basic expressions. The second level turns these basic expressions into clearer expressions. In this level, every action has its own class, for example. We need to make sure that such an action exists for our custom action, and that it is created when necessary. \\ 
 
-The classes that handle this second level of parsing are called validators, because they not only parse the program but also make sure that everything is correct. The grammar has four different validators for the four parts of the goal language: agents, multi-agent systems, modules and tests. Most relevant for us are the agents; we need to make sure that our custom action passes the validation of the agent's execution code, and also that the parameters that are passed to the action are preserved in the process. \\ \par
+The classes that handle this second level of parsing are called validators, because they not only parse the program but also make sure that everything is correct. The grammar has four different validators for the four parts of the goal language: agents, multi-agent systems, modules and tests. Most relevant for us are the agents; we need to make sure that our custom action passes the validation of the agent's execution code, and also that the parameters that are passed to the action are preserved in the process. \\ 
 
 The grammar is not yet responsible for any communication with the actual implementation of the plugin; it just makes sure that an action is created, and the parameters, though also not yet interpreted, are passed to it.
 
 \subsubsection{Runtime overview}
-In this section, the parts of the runtime that are relevant to the implementation of our custom action will be covered. In the runtime changes will be made to allow for interpretation of the custom action, and the actual interpretation will be hooked to the implementation of the plugin. \\ \par
+In this section, the parts of the runtime that are relevant to the implementation of our custom action will be covered. In the runtime changes will be made to allow for interpretation of the custom action, and the actual interpretation will be hooked to the implementation of the plugin. \\ 
 
-The runtime traverses the rules of the agent program, and when it crosses an action, it creates an action executor for said action. This action executor is then executed. We need to make sure that such and action executor exists for our custom action. \\ \par
+The runtime traverses the rules of the agent program, and when it crosses an action, it creates an action executor for said action. This action executor is then executed. We need to make sure that such and action executor exists for our custom action. \\ 
 
 Then, in this action executor, we need to implement the hook with the plugin implementation. We adjust the parameters so that they are in the correct format for the plugin, and then pass it to the plugin, which then handles the parameters and generates output This output must then be passed to the belief base.
 
 \subsection{Calculator Plugin overview}
-This section explains how the implementation of the calculator plugin is set up. \\ \par
+This section explains how the implementation of the calculator plugin is set up. \\ 
 
-The program consists of many operations (e.g. plus, minus) that all derive from the Operation class. They have a string that represents their operator, and a function calc that gets a list of doubles as an input and produces a single double as the output. Each operation is in charge of setting its own precondition for the amount or the format of the parameters that are passed. \\ \par
+The program consists of many operations (e.g. plus, minus) that all derive from the Operation class. They have a string that represents their operator, and a function calc that gets a list of doubles as an input and produces a single double as the output. Each operation is in charge of setting its own precondition for the amount or the format of the parameters that are passed. \\ 
 
-There is one main class, Calculator, that is responsible for finding the right operation and calling it, when being passed an operator string and the aforementioned list of doubles. It uses a class loader to find the correct operation, so that new operations can be added to the program simply by creating a new class that extends Operation in the right package. \\ \par
+There is one main class, Calculator, that is responsible for finding the right operation and calling it, when being passed an operator string and the aforementioned list of doubles. It uses a class loader to find the correct operation, so that new operations can be added to the program simply by creating a new class that extends Operation in the right package. \\ 
