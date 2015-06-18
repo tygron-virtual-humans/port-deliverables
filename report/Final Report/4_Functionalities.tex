@@ -7,3 +7,12 @@ GAMYGDALA is an emotion engine for games originally written in JavaScript. A lar
 GAMYGDALA operates in an environment where actors, ''agents'', interact with each other. Every agent has goals to achieve. In the environment, events can occur which influence the likelihood of goal achievement for a particular agent. Taken into account all the events that have happened, one or more emotions are deduced from the agents internal emotional state. Furthermore, agents have reciprocal relations: agents ''feel'' for other agents and adjust their emotions accordingly.
 
 \subsection{Gamygdala in GOAL}
+The primary goal of the GOAL programming language is to allow people to program agents from a human point of view, so that they can simulate human behaviour with ease. GOAL is very good at modelling the logical side of humans, but it lacks the very reason for our right brain's existence: Emotion. To allow GOAL to support this vital part of human simulation, we have added GAMYGDALA functionality to GOAL. All actions that are available in GAMYGDALA are now also available in goal. Using the GAMYGDALA plugin, agents can do the following things:
+\begin{itemize}
+	\item Tell GAMYGDALA it has a goal.
+	\item Tell GAMYGDALA it no longer has a goal.
+	\item Appraise an event. This is what makes it gain emotions.
+	\item Establish a relationship with another agent.
+	\item Recalculate the emotions based on the passage of time.
+\end{itemize}
+Using these actions, programmers can completely take emotion into account while programming agents that need to mimic human behaviour.
