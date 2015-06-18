@@ -1,1 +1,21 @@
 \section{Reflection from a software engineering perspective}
+There are unlimited ways to approach the development of a software program. To streamline the process of developing and to ensure product quality, it is necessary to adhere to software engineering guidelines and principles. This section will discuss the measures that have been taken from a software engineering perspective and in which way they have affected the final product and the development process.
+
+
+% Reflection on the product and process from a software engineering perspective
+\subsection{Product}
+From the first day on it was clear there was a challenging task to solve: porting the emotion engine GAMYGDALA from JavaScript to Java. While ''JavaScript'' and ''Java'' sound very similar, these are actually two very different languages and require a very different approach from a programming perspective. Java is an object-oriented language pur sang, JavaScript, in practice, uses a more procedural programming style.
+
+Because Joost Broekens, the original author of the JavaScript version of GAMYGDALA, has programmed GAMYGDALA using a semi-object oriented approach, we initially decided to port the classes and methods to Java one on one. The Java port was therefore immediately feature complete. However, from a software engineering perspective, the code lacked proper design patterns and thus overall quality due to the fact that JavaScript simply does not support such  programming structures. Using InCode Helium (\textbf{TODO: REF}), we identified major flaws in the code and started a large-scale refactoring process to incorporate proper software design principles. During this process, we have reduced or split up very large methods, refactored methods with redundant or duplicate code and have implemented design patterns\footnote{For an overview of all design patterns that have been used, please review the Emergent Architecture Design \citep{ead}.} where appropriate. The code review by Software Improvement Group identified additional flaws, which have been corrected in the final product.
+
+The next and final challenge to face has been the creation of a GOAL plug-in for GAMYGDALA. The plug-in acts as an interface for the GAMYGDALA Java port, allowing other GOAL programs to utilize the emotion engine. [.. TODO ..]
+
+\subsection{Process}
+\begin{itemize}
+\item SCRUM
+\item Pull-based development
+\item Problemen met sprints, inschatting etc. werkverdeling
+\item Wat hebben we geleerd?
+\item GitHub
+\item Meerdere repo's
+\end{itemize}
