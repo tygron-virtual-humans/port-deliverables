@@ -21,15 +21,8 @@ We have tested our implementation, the Java port as well as the GOAL plug-in, th
 \subsection{Process}
 To streamline the development process, we have used an iterative, incremental and agile approach: SCRUM. Every week, we've determined which tasks we would like to have completed which of these tasks have to highest priority. The selected tasks for that ''sprint'' (a one week period in which the selected tasks are to be completed) are then, roughly equally, divided amongst team members. At the end of the sprint, an evaluation takes place and the plan for the next sprint is determined. If we were unable to complete a particular task, it is added to the sprint plan for the next week.
 
-To make collaborating easier, we've used GitHub to host our code. We have used multiple repositories for different parts of the project. The GAMYGDALA port, GOAL plug-in and reports all used a different repository. This enabled us to work seamlessly together at different parts of the final product. Furthermore, we've utilized GitHub using a pull-based development approach. This means that whenever a team member finished and tested a piece of code on a separate branch, a pull request has to be created. Another team member has to review the code and check it for possible errors, before the request can be merged in the master branch. Two sets of eyes on a particular piece of code increases the likelihood of finding bugs before they make their way into the final product. 
+TODO: Meer over sprint.
 
-To ensure code quality, we have used continuous integration. The unit tests written for our program are executed each time a new piece of code is committed, to make sure no existing functionality breaks. Also, checkstyle is automatically executed at that time to make sure the code formatting adheres to guidelines we've established at the beginning of the project.
+To make collaborating easier, we have used GitHub to host our code. We have used multiple repositories for different parts of the project. The GAMYGDALA port, GOAL plug-in and reports all used a different repository. This enabled us to work seamlessly together at different parts of the final product. Furthermore, we've utilized GitHub using a pull-based development approach. This means that whenever a team member finished and tested a piece of code on a separate branch, a pull request has to be created. Another team member has to review the code and check it for possible errors, before the request can be merged in the master branch. Two sets of eyes on a particular piece of code increases the likelihood of finding bugs before they make their way into the final product. 
 
-\subsection*{TODO}
-\begin{itemize}
-\item SCRUM
-\item Pull-based development
-\item Problemen met sprints, inschatting etc. werkverdeling
-\item Wat hebben we geleerd?
-\item GitHub, meerdere repo's
-\end{itemize}
+To ensure code quality, we have used continuous integration. Each time a team member has created new software functionality, he must also provide unit tests for that particular functionality. For each commit to the repository, Travis, a continuous integration tool, runs all the unit tests and generates a test report, to make sure no existing functionality breaks. Also, Checkstyle is automatically executed to make sure the code formatting adheres to guidelines we've established at the beginning of the project. These measures aid other team members in determining the quality of a commit and whether or not a pull request can be merged.
