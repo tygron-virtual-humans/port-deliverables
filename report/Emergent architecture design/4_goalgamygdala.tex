@@ -7,7 +7,7 @@ GAMYGDALA is an emotion engine that is meant for games. Therefore, it works with
 
 \subsection{Term Parser}
 When a call is made in GOAL, this is done in the form of terms. Terms define the basic structure of a GOAL value, though the only current implementation is in Prolog. Since our GAMYGDALA port is in java, it expects basic java values, so we need to transform these Terms to primary values or lists. We do this by using a term parser.
-We have defined a term parser interface that specifies all the types of values that the parser should be able to get from a Term, and we have created the specific prolog term parser implementation. This interface exists for the possibility that another language might be supported by GOAL in the future.
+We have used the Strategy pattern for the term parser: we defined a term parser interface that specifies all the types of values that the parser should be able to get from a Term, and we have created the specific prolog term parser implementation. This allows us to easily change the term parser in the case that another language might be supported by GOAL in the future.
 
 \subsection{Main interface}
 Since all calls need to be forwarded to the GAMYGDALA Engine, we have created a singleton called GoalGamygdala that mimics the essential actions of the Engine, though the names might be changed to better match GOAL conventions (since the interface is GOAL-GAMYGDALA and not GAMYGDALA-GOAL). These actions then make use of the term parser to parse the terms into values that GAMYGDALA can understand, and then they forward the calls to gamygdala with the parsed values.
