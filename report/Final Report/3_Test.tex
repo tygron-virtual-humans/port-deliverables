@@ -1,0 +1,46 @@
+\section{Lay-out test}
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
+
+\subsection{Heading 2}
+Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+
+\subsubsection{Heading 3}
+Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+
+\subsection{Java code}
+\begin{javacode}
+import krTools.KRInterface;
+import krTools.errors.exceptions.KRInitFailedException;
+import mentalState.MentalState;
+import swiPrologMentalState.SwiPrologMentalState;
+
+/**
+ * Factory of Mental State Interfaces.
+ *
+ * @author W.Pasman 4dec14
+ */
+public class MentalStateFactory {
+
+	/**
+	 * A map of names to {@link MentalSt}s that are supported.
+	 */
+	private static Map<Class<? extends KRInterface>, Class<? extends MentalState>> mentalstateInterfaces;
+
+	/**
+	 * The default interface that get be obtained by
+	 * {@link MentalStateFactory#getDefaultLanguage()}.
+	 */
+	private static MentalState defaultInterface;
+
+	// Initialize KR interfaces map and default language interface.
+	static {
+		init();
+	}
+
+	/**
+	 * KRFactory is a utility class; constructor is hidden.
+	 */
+	private MentalStateFactory() {
+	}
+}
+\end{javacode}
