@@ -1,7 +1,7 @@
 \section{GAMYGDALA}
-In the Gamygdala world, Agents have goals they want to achieve. Based on their beliefs, they assess whether or not they have achieved their goals, and e.g. what the likelihood to achieve their goals is. Based on these properties and based on the relation with other agents, the agent's emotion is calculated. \\ 
+In the Gamygdala world, Agents have goals they want to achieve. Based on their beliefs, they assess whether or not they have achieved their goals, and e.g. what the likelihood to achieve their goals is. Based on these properties and based on the relation with other agents, the agent's emotion is calculated.
 
-Each Agent has a separate goal base which they update every evaluation cycle. Whenever an event happens, the impact on a particular goal has to be provided. New agent-specific values like the goal likelihood, change in likelihood, the overall utility of the goal (how useful is it to achieve the goal) are then recalculated. Finally, a new emotion is distilled from all these particular properties. \\
+Each Agent has a separate goal base which they update every evaluation cycle. Whenever an event happens, the impact on a particular goal has to be provided. New agent-specific values like the goal likelihood, change in likelihood, the overall utility of the goal (how useful is it to achieve the goal) are then recalculated. Finally, a new emotion is distilled from all these particular properties.
 
 Because multiple agents might share certain goals, the engine itself also keeps track of all goals. \\
 
@@ -10,16 +10,16 @@ In this section, you will get insight into the current overall GAMYGDALA Archite
 \subsection{GAMYGDALA architecture overview}
 In the following section, there will be an overview of how GAMYGDALA is built up from the inside. \\
 
-The GAMYGDALA architecture starts with the Engine class. The Engine class contains the GAMYGDALA itself. The Engine class is responsible for maintaining the GAMYGDALA engine. It manages all the engine aspects, like the calculation of time differences for the decay function. \\
+The GAMYGDALA architecture starts with the Engine class. The Engine class contains the GAMYGDALA itself. The Engine class is responsible for maintaining the GAMYGDALA engine. It manages all the engine aspects, like the calculation of time differences for the decay function.
 
-The Gamygdala class manages the overall aspects of agents, goals and beliefs. When an event happens, it creates a belief with certain goals that are affected by that event. The Gamygdala class manages the appraisal of the belief over the agents. \\
+The Gamygdala class manages the overall aspects of agents, goals and beliefs. When an event happens, it creates a belief with certain goals that are affected by that event. The Gamygdala class manages the appraisal of the belief over the agents.
 
-The Agent class is by far the biggest class in the GAMYGDALA port. This is the class that handles all of the agents activities. The Agent class is the biggest class, because GAMYGDALA is built around agents, their goals, their relations and their emotion. The agents are the center of the GAMYGDALA emotion engine. The personal emotions of an agent are managed in its internal state object. The social emotions are managed in its relations object. Both object are lists of respectively emotions and relations. Relations also contain emotions. \\
+The Agent class is by far the biggest class in the GAMYGDALA port. This is the class that handles all of the agents activities. The Agent class is the biggest class, because GAMYGDALA is built around agents, their goals, their relations and their emotion. The agents are the center of the GAMYGDALA emotion engine. The personal emotions of an agent are managed in its internal state object. The social emotions are managed in its relations object. Both object are lists of respectively emotions and relations. Relations also contain emotions.
 
 The Belief class is the last very important class of GAMYGDALA. A belief is made when an event happens in-game. A belief then contains the goals it affects and the congruence of the belief on that certain goal. A belief also contains a likelihood, which tells how unique the event is. A more unique event will cause more effect on an emotion than a less unique event.
 
 \subsection{Porting}
-In the process of porting the Gamygdala engine from Javascript to Java, we have implemented a number of design patterns to better structure the code. Since Gamygdala was originally developed as a gaming engine, we had to separate the core logic from utility functions. The core logic is also separated into classes with a single-responsibility and coupling is avoided wherever possible. \\
+In the process of porting the Gamygdala engine from Javascript to Java, we have implemented a number of design patterns to better structure the code. Since Gamygdala was originally developed as a gaming engine, we had to separate the core logic from utility functions. The core logic is also separated into classes with a single-responsibility and coupling is avoided wherever possible. 
 
 During an analysis of the code, we found out that he five main classes of the engine are:
 \begin{itemize}
@@ -30,7 +30,7 @@ During an analysis of the code, we found out that he five main classes of the en
 	\item \textbf{Relation} The Relation between two Agents.
 \end{itemize}
 
-To support our claim that we improved the code on the software engineering part, we made two UML-diagrams. The first diagram is made using our first version of the port, this was an almost exact copy of the original GAMYGDALA code. The second diagram is made using our re-factored code, it was not perfect but it was a big improvement over the original code. The UML-diagrams can be found on the next two pages.\\
+To support our claim that we improved the code on the software engineering part, we made two UML-diagrams. The first diagram is made using our first version of the port, this was an almost exact copy of the original GAMYGDALA code. The second diagram is made using our re-factored code, it was not perfect but it was a big improvement over the original code. The UML-diagrams can be found on the next two pages. Their formatting is slightly different due to changing the UML tool.\\
 
 \begin{figure}
 \includegraphics[width=\linewidth]{GAMYGDALA_UML_OLD}
@@ -40,7 +40,7 @@ To support our claim that we improved the code on the software engineering part,
 \pagebreak
 
 \begin{figure}
-\includegraphics[width=\linewidth]{GAMYGDALA_UML_NEW}
+\includegraphics[width=\linewidth]{diagram-gamygdala}
 \caption{The UML-diagram for the re-factored port.}
 \end{figure}
 

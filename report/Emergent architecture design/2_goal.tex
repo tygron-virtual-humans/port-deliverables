@@ -11,7 +11,7 @@ The parsing consists of multiple levels. The first level is converting the plain
 
 All of our custom actions share the same format, that is to say they all take a list of values as their parameters instead of some predicate. Since these actions all share this format, it makes sense to generalise them. This is exactly what we have done. There is an abstract 'parameter action', and to create a new action in the grammar we only need to create a new class for it in a certain package. 
 
-The classes that handle the second level of parsing are called validators, because they not only parse the program but also make sure that everything is correct. The grammar has four different validators for the four parts of the goal language: agents, multi-agent systems, modules and tests. Most relevant for us are the agents; we need to make sure that our custom action passes the validation of the agent's execution code, and also that the parameters that are passed to the action are preserved in the process. \\ 
+The classes that handle the second level of parsing are called validators, because they not only parse the program but also make sure that everything is correct. The grammar has four different validators for the four parts of the goal language: agents, multi-agent systems, modules and tests. Most relevant for us are the agents; we need to make sure that our custom action passes the validation of the agent's execution code, and also that the parameters that are passed to the action are preserved in the process. 
 
 To make sure that this agent validator class did not become much larger than it already was, we created a parameter action factory that handles the creation of the parameter actions. Using a class loader, this factory creates the specific parameter action that matches the operator. This is very easy, because every parameter action executor has an 'Action Token' annotation that tells the class loader for which operator it is used. To allow for easy class loading, the reflections package was used.
 
@@ -44,7 +44,7 @@ For the emotion manager, we have used the Singleton pattern. This allowed us to 
 
 \begin{figure}
 \includegraphics[width=\linewidth]{diagram-grammar}
-\caption{The UML-diagram for the grammar.}
+\caption{The UML-diagram for the grammar. Constructors are omitted for better readability.}
 \end{figure}
 
 \begin{figure}
