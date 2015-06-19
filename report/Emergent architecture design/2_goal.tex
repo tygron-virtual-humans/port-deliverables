@@ -31,6 +31,8 @@ Once the action executor is found and actually executes, the call is forwarded t
 In some cases, the emotions of the agent need to be updated after execution. For this purpose, we have created an emotion manager class. This class is responsible for updating the emotions in the mental state of the agent.
 
 \subsection{Design Patterns}
+Several design patterns were used in the code we added to GOAL. This section provides an overview of those design patterns.
+
 \subsubsection{Factory Method pattern}
 In both the grammar and the runtime, we needed a way to create actions and action executors, based on operators and actions respectively. To make sure that this responsibility was separated from the rest of the GOAL source, we decided to create a factory in both cases. To make sure we also adhered to the open/closed principle, we decided to expand this to the Factory Method Pattern. By using this specific pattern, a new factory can always be created and substituted for the old factory in case anyone wants to implement a new way to create these actions and action executors. This pattern and its use are clearly visible in the UMLs of both the grammar and the runtime.
 
