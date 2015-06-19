@@ -19,7 +19,7 @@ The Agent class is by far the biggest class in the GAMYGDALA port. This is the c
 The Belief class is the last very important class of GAMYGDALA. A belief is made when an event happens in-game. A belief then contains the goals it affects and the congruence of the belief on that certain goal. A belief also contains a likelihood, which tells how unique the event is. A more unique event will cause more effect on an emotion than a less unique event.
 
 \subsection{Porting}
-In the process to porting the Gamygdala engine from Javascript to Java, we have implemented a number of design patterns to better structure the code. Since Gamygdala was originally developed as a gaming engine, we had to separate the core logic from other facilitator functions. The core logic is also separated into classes with a single-responsibility and coupling is avoided wherever possible. \\
+In the process of porting the Gamygdala engine from Javascript to Java, we have implemented a number of design patterns to better structure the code. Since Gamygdala was originally developed as a gaming engine, we had to separate the core logic from utility functions. The core logic is also separated into classes with a single-responsibility and coupling is avoided wherever possible. \\
 
 During an analysis of the code, we found out that he five main classes of the engine are:
 \begin{itemize}
