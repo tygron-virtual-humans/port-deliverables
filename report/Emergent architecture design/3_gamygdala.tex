@@ -29,19 +29,23 @@ To support our claim that we improved the code on the software engineering part,
 \caption{The UML-diagram for the re-factored port.}
 \end{figure}
 
-\subsection{Test}
+\subsection{Testing}
+Testing is one of the most important software engineering aspects. Especially for a port is testing very important, because the port needs to work exactly the same as the original program. To make sure the port works exactly the same, we made use of two different types of testing. The first is Unit testing, and the second is a Benchmark.
+
+\subsubsection{Unit testing}
+A Unit test determines whether a method still functions the same as intented to do. After the initial port, unit tests were made to ensure the purpose of the functions. After every re-factored piece of method, running the Unit tests made sure that the method still functioned the same. By this way of testing there were some bugs found in the new code after we did the re-factor.
+
+\subsubsection{Benchmark}
+Benchmark testing was very important for this system. A benchmark tests whether your whole programs functions like it was intended to do. If the right Emotions where calculated when certain Goals and Beliefs where added to the Engine. And whether certain relations where made when a Goal belongs to another Agent, but it affected the other. After a successful benchmark test, the system is functionally correct. 
 
 \subsection{Big re-factor}
 After the initial port and re-factoring of GAMYGDALA, we came to the conclusion that the Java code was still not very pretty. It had long functions, big classes and still classes with multiple responsibilities. To counter these faults, we started a big re-factor of the code. First we divided some functions in smaller new functions with less responsibility. We distributed the smaller functions over different classes. These changes made the bigger classes smaller and gave them less responsibilities.  
-
-\subsection{Benchmark}
-When most of the 
 
 \subsection{Design patterns}
 Within the GAMYGDALA port there are several design patterns used. These patterns help to improve the code and make it easier to use and develop. In the following subsections, we will present to you the design patterns used within the code.
 
 \subsubsection{Singleton pattern}
-The singleton pattern is very usefull in cases where you want to have at most 1 object of a class. The Engine Class has the singleton pattern build in. This is because it is not useful to have two GAMYGDALA engines running beside each other. Emotions can be calculated for each agent, and relation too. So there is no need for a second engine. It could only confuse programmers if they had accidentally created two different GAMYGDALA engines and been working in them both.  
+The singleton pattern is very useful in cases where you want to have at most 1 object of a class. The Engine Class has the singleton pattern build in. This is because it is not useful to have two GAMYGDALA engines running beside each other. Emotions can be calculated for each agent, and relation too. So there is no need for a second engine. It could only confuse programmers if they had accidentally created two different GAMYGDALA engines and been working in them both.  
   
 \subsubsection{Strategy pattern}
 The strategy pattern is very usefull when you have something that needs to be calculated and it depends on certain conditions how it needs to be calculated. Because of this we used the strategy pattern to determine the kind of emotions. The emotion calculation is based on the likelihood. For certain values of the likelihood there is a different strategy to calculate the kind of emotion.
