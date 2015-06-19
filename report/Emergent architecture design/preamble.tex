@@ -19,7 +19,7 @@
 \usepackage{enumitem}
 
 % Syntax highlighting
-\usepackage{minted}
+%\usepackage{minted}
 \usepackage[scaled]{beramono}
 
 % Tables
@@ -31,7 +31,11 @@
 % Hyperlinks
 \usepackage{hyperref}
 
-
+% Prevent hyphenation
+\tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
 
 %%
 % Set-up packages
@@ -46,5 +50,5 @@
 }
 
 % Highlighting style
-\usemintedstyle{colorful}
-\newminted{java}{breaklines=true}
+%\usemintedstyle{colorful}
+%\newminted{java}{breaklines=true}
