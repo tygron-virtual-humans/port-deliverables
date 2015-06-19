@@ -3,11 +3,11 @@ Now that you have an understanding of how GOAL works and how GAMYGDALA works, it
 There are some significant differences between the way GOAL works and the way GAMYGDALA works. Understanding these differences is fundamental in the process of designing the interface between the two. After all, the goal of the interface is to cross these differences the best it can.
 
 \subsection{Term Parser}
-When a call is made in GOAL, this is done in the form of terms. Terms define the basic structure of a GOAL value, though the only current implementation is in Prolog. Since our GAMYGDALA port is in java, it expects basic java values, so we need to transform these Terms to primary values or lists. We do this by using a term parser.
+When a call is made in GOAL, this is done in the form of terms. Terms define the basic structure of a GOAL value, though the only current implementation is in Prolog. Since our GAMYGDALA port is in java, it expects basic java values, so we need to transform these Terms to primary values or lists. This is done by using a term parser.
 We have used the Strategy pattern for the term parser: we defined a term parser interface that specifies all the types of values that the parser should be able to get from a Term, and we have created the specific prolog term parser implementation. This allows us to easily change the term parser in the case that another language might be supported by GOAL in the future.
 
 \subsection{Main interface}
-Since all calls need to be forwarded to the GAMYGDALA Engine, we have created a singleton called GoalGamygdala that mimics the essential actions of the Engine, though the names might be changed to better match GOAL conventions (since the interface is GOAL-GAMYGDALA and not GAMYGDALA-GOAL). These actions then make use of the term parser to parse the terms into values that GAMYGDALA can understand, and then they forward the calls to gamygdala with the parsed values.
+Since all calls need to be forwarded to the GAMYGDALA Engine, we have created a singleton called GoalGamygdala that mimics the essential actions of the Engine, though the names might be changed to better match GOAL conventions (since the interface is GOAL-GAMYGDALA and not GAMYGDALA-GOAL). These actions then make use of the term parser to parse the terms into values that GAMYGDALA can understand, and then they forward the calls to GAMYGDALA with the parsed values.
 
 \subsection{Agent interface}
 There are some actions that are agent-specific. Since it seemed rather faulty to lay the responsibility of forwarding these agent-specific actions with the main interface class, which is mainly responsible for forwarding agent calls, it made more sense to create an interface for the agents specifically. The only responsibility that is laid with the main interface is then allowing GOAL to get to the desired agent interface that matches the agent it wants to work with.
@@ -16,3 +16,11 @@ There are some actions that are agent-specific. Since it seemed rather faulty to
 Relations are the one specific case where differences between GOAL and GAMYGDALA really show themselves. The main problem is that all GOAL agents work on their own, and they might not be active at the same time. However, agents should be able to define relations to each other regardless of whether they are active or not.
 To achieve this, relation creation calls are not simply forwarded to GAMYGDALA. First, a check is done to see if the relation target is actually registered in GAMYGDALA. If it is not, the relation is saved and will be applied the second the target gets registered.
 Because of this, agents don't have to worry about loading times or sheer inactivity of other agents, and they can simply define relations whenever they want. Once these relations become applicable, they will be applied.
+
+\subsection{Agent management}
+Because both the relation manager and the main interface need to be able to access the agents, to create the relations and do other things respectively, we have created an agent manager singleton that keeps track of all agents. In that way, both the relation manager and the main interface are capable of accessing the agents when they so desire.
+
+\begin{figure}
+\includegraphics[width=\linewidth]{diagram-goalgamygdala}
+\caption{The UML-diagram for the GOAL-GAMYGDALA interface.}
+\end{figure}
