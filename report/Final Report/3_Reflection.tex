@@ -1,5 +1,5 @@
 \section{Reflection from a software engineering perspective}
-There are unlimited ways to approach the development of a software program. To streamline the process of developing and to ensure product quality, it is necessary to adhere to software engineering guidelines and principles. This section will discuss the measures that have been taken from a software engineering perspective and in which way they have affected the final product and the development process.
+To streamline the process of developing and to ensure product quality, it is necessary to adhere to software engineering guidelines and principles. This section will discuss the measures that have been taken from a software engineering perspective and in which way they have affected the final product and the development process.
 
 
 % Reflection on the product and process from a software engineering perspective
@@ -10,11 +10,16 @@ Because Joost Broekens, the original author of the JavaScript version of GAMYGDA
 
 The next and final challenge to face has been the creation of a GOAL \citep{goal} plug-in for GAMYGDALA. The plug-in acts as an interface for the GAMYGDALA Java port, allowing other GOAL programs to utilize the emotion engine.
 
-Again, we were dealing with multiple types of language structures. GAMYGDALA is very structural, primarily based on one thread, since it is made for simple games. In GOAL, however, every agent runs in a different thread at the same time, and with that also past each other sometimes. For example, sometimes agents would create relations to other agents that were not running. We have had to make some sort of relation queue so that these relations were only processed once the target agent became active.
+TODO(Wouter): Stuk over relations in GOAL.
 
 Creating the new GAMYGDALA actions within the GOAL source code proved to be rather difficult. Though we had been able to create our new actions, the way that we had done this seemed quite dirty. GOAL was not particularly ready for the addition of new actions and we had to violate the open/closed principle a lot to make sure that our new actions were recognized and used. To make sure that this would no longer be the case, at least for our own project, we created classloaders that would automatically recognize any new actions when we would add them.
 
-We have tested our implementation, the Java port as well as the GOAL plug-in, thoroughly. For the GAMYGDALA port, a test suite written in JavaScript was available. In order to be able to execute these tests in a Java environment, we have adapted part of the JavaScript code and have written an interface for this test suite in Java. The result is then interpreted in a JUnit test to be able to use this in continuous testing.
+We have tested our implementation, the Java port as well as the GOAL plug-in, thoroughly. We have made use of JUnit, a Java unit testing framework \citep{junit}, to run unit tests which are developed for the better part of the code. The current line coverage, a metric to measure how much of the code is called in unit tests, is currently at 90\%. Additionally, a test suite written in JavaScript was available for the original version of GAMYGDALA. To be able to use these tests in Java, part of the JavaScript code was altered and a Java interface for this test suite has been developed. The Java class to interface with the test suite utilizes a JavaScript engine, Nashorn, included with Java 8. Nashorn is the de-facto JavaScript engine for Java and provides high-performance \citep{projnashorn} and full ECMAScript 5.1 compliance. Alterations made to the GAMYGDALA JavaScript test suite include:
+\begin{itemize}
+\item Adapting the GAMYGDALA object instantiation to the new implementation of the Java port to be able to use it in the first place.
+\item Replacing JavaScript arrays with Java ArrayLists (a technique which is made possible by Nashorn, see: \href{http://docs.oracle.com/javase/8/docs/technotes/guides/scripting/prog_guide/javascript.html#A1147187}{documentation}), to be able to use these objects as arguments in method calls.
+\end{itemize}
+The Java test class, which runs the JavaScript test suite, instantiates a new Nashorn JavaScript engine object which loads the test suite framework and subsequently runs the tests in the suite. The test suite returns a string which is then parsed in a JUnit test to allow its usage in the existing unit test workflow.
 
 \subsection{Process}
 To streamline the development process, we have used an iterative, incremental and agile approach: SCRUM \citep{scrum}. Every week, we have determined which tasks we would like to have completed which of these tasks have to highest priority. The selected tasks for that ``sprint" (a one week period in which the selected tasks are to be completed) are then, roughly equally, divided amongst team members. At the end of the sprint, an evaluation takes place and the plan for the next sprint is determined. If we were unable to complete a particular task, it is added to the sprint plan for the next week.
