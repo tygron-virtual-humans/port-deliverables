@@ -1,13 +1,13 @@
 \section{Developed functionalities}
-It is a great addition for Non-Playable Characters (NPC) in games to have and feel emotions. Emotions are crucial in respect to gameplay decisions, especially in serious games. The virtual human to which we contribute with this project has to be able to be affected by actions outside its own influence, and feel emotions. Therefore, we have tried to find a way to use GAMYGDALA \citep{gamygdala} in GOAL.
+It is a great addition for Non-Playable Characters (NPC) in games to have and feel emotions. Emotions are crucial in respect to gameplay decisions, especially in serious games. A virtual human has to be able to be affected by actions outside its own influence, and feel emotions. To make that possible, GOAL has been extended with emotion engine GAMYGDALA.
 
 \subsection{Gamygdala Java Port}
-GAMYGDALA is an emotion engine for games originally written in JavaScript. A large part of the work done during this project has been porting the JavaScript version to Java while simultaneously optimizing code quality. While we have not developed GAMYGDALA ourselves, its functionality will be briefly discussed for completeness.
+GAMYGDALA is an emotion engine for games originally written in JavaScript. A large part of the work done during this project has been porting the JavaScript version to Java while simultaneously optimizing code quality. While the creation of GAMYGDALA was no part of this project, its functionality will be briefly discussed for completeness.
 
 GAMYGDALA operates in an environment where actors, ``agents'', interact with each other. Every agent has goals to achieve. In the environment, events can occur which influence the likelihood of goal achievement for a particular agent. Taken into account all the events that have happened, one or more emotions are deduced from the agents internal emotional state. Furthermore, agents have reciprocal relations: agents ``feel'' for other agents and adjust their emotions accordingly.
 
 \subsection{Gamygdala in GOAL}
-The primary goal of the GOAL programming language is to allow people to program agents from a human point of view, so that they can simulate human behaviour with ease. GOAL is very good at modelling the logical side of humans, but it lacks the very reason for our right brain's existence: emotion. To allow GOAL to support this vital part of human simulation, we have added GAMYGDALA functionality to GOAL. All actions that are available in GAMYGDALA are now also available in goal. Using the GAMYGDALA plugin, agents can do the following things:
+The primary goal of the GOAL programming language is to allow people to program agents from a human point of view, so that they can simulate human behaviour with ease. GOAL is very good at modelling the logical side of humans, but it lacks the very reason for our right brain's existence: emotion. To allow GOAL to support this vital part of human simulation, GAMYGDALA has been added to GOAL. All actions that are available in GAMYGDALA are now also available in GOAL. Using the GAMYGDALA plug-in, agents are able to do the following:
 \begin{itemize}
 	\item Tell GAMYGDALA it has a goal.
 	\item Tell GAMYGDALA it no longer has a goal.
