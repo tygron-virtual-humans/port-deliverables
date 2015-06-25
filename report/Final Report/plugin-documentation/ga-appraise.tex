@@ -1,15 +1,16 @@
-\subsection{ga-appraise}
+\subsubsection{ga-appraise}
 
 \textbf{ga-appraise}(double \emph{likelihood}, string \emph{agent}, list \emph{affectedGoals},\\list \emph{goalCongruences}, boolean \emph{isIncremental})
 
-Appraises a belief that influences the likelihoods of goals. This is how agents gain emotions.
+Appraises a belief that influences the likelihoods of goals. This is how agents gain emotions.\\
 
-\begin{itemize}
-	\item \textbf{likelihood} \\ The likelihood of the belief to be true.
-	\item \textbf{agent} \\ The agent that caused the belief.
-	\item \textbf{affectedGoals} \\ The goals that were affected.
-	\item \textbf{goalCongruences} \\ How the goals were affected respectively, from -1 to 1, -1 for very negatively, 1 for very positively.
-	\item \textbf{isIncremental} \\ Whether this belief enforces the likelihood of these goals (true), or defines the absolute likelihood (false).
-\end{itemize}
-
-
+\begin{tabular}{l l}
+	\textbf{likelihood} & The likelihood of the belief to be true.\\
+	\textbf{agent} & The agent that caused the belief. \\
+	\textbf{affectedGoals} & The goals that were affected.\\
+	\textbf{goalCongruences} & How the goals were affected respectively, from -1\\ 
+	& to 1, -1 for very negatively, 1 for very positively. \\
+	\textbf{likelihood} & The likelihood of the belief to be true.\\
+	\textbf{isIncremental} & Whether this belief enforces the likelihood of \\
+	& these goals (\textit{true}), or defines the absolute likelihood (\textit{false}). 
+\end{tabular}
