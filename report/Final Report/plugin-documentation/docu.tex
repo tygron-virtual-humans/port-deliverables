@@ -1,3 +1,4 @@
+\section{Appendix A: Plug-in Manual}
 \subsection{Introduction}
 This is the manual for the GAMYGDALA extension of the GOAL programming language. Before reading this manual, you will have to understand how the GOAL language itself works. If you still need to read up on this, it is suggested that you read the GOAL programming manual and try out some of the exercises.
 
@@ -12,11 +13,11 @@ Agents may also have relations; they can like or hate each other to a certain ex
 The GAMYGDALA plugin for goal is based on new actions. These actions are very similar to the environment actions that are generally defined in the actionspec. No actionspec is needed for this plugin, though.
 This section covers the actions that can be used. The next section will cover the results that these actions yield.
 
-\input{ga-adopt.tex}
-\input{ga-drop.tex}
-\input{ga-create-relation.tex}
-\input{ga-appraise.tex}
-\input{ga-decay.tex}
+\input{plugin-documentation/ga-adopt.tex}
+\input{plugin-documentation/ga-drop.tex}
+\input{plugin-documentation/ga-create-relation.tex}
+\input{plugin-documentation/ga-appraise.tex}
+\input{plugin-documentation/ga-decay.tex}
 
 \subsection{Results}
 When the appraise and decay actions are called, the emotions for the agent are fetched from GAMYGDALA, and they are stored in the belief base, in the following form:
