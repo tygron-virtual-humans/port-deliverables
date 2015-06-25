@@ -1,0 +1,56 @@
+\documentclass[11pt]{article}
+
+\begin{document}
+
+\section{Introduction}
+This is the manual for the GAMYGDALA extension of the GOAL programming language. Before reading this manual, you will have to understand how the GOAL language itself works. If you still need to read up on this, it is suggested that you read the GOAL programming manual and try out some of the exercises.
+
+To offer you a full understanding of how our plugin in works, you will find in this document an overview of how GAMYGDALA works, definition of all actions that can be used, how to use them, and the results that are yielded when using the plugin.
+
+\section{Gamygdala overview}
+In GAMYGDALA, an agent gains emotions by adopting goals and appraising beliefs that influence the likelihoods of these goals. For example, if an agent has a goal to become rich, and he signs a large deal, its likelihood to become rich will become higher, and the agent will become hopeful. As in the real world, the intensity of these emotions decays over time.
+
+Agents may also have relations; they can like or hate each other to a certain extent. These relations will infilct emotions such as happy-for or resentment when something happens to the agents that they feel liking or hate towards. For example, if mario kills a goomba, peach may start feeling happy-for and bowser may start feeling resentment.
+
+\section{Actions}
+The GAMYGDALA plugin for goal is based on new actions. These actions are very similar to the environment actions that are generally defined in the actionspec. No actionspec is needed for this plugin, though.
+This section covers the actions that can be used. The next section will cover the results that these actions yield.
+
+\input{ga-adopt.tex}
+\input{ga-drop.tex}
+\input{ga-create-relation.tex}
+\input{ga-appraise.tex}
+\input{ga-decay.tex}
+
+\section{Results}
+When the appraise and decay actions are called, the emotions for the agent are fetched from GAMYGDALA, and they are stored in the belief base, in the following form:
+\begin{center}
+	\texttt{emotion(EmotionName,Intensity)}
+\end{center}
+Basic emotions can be the following:
+\begin{itemize}
+	\item Hope
+	\item Fear
+	\item Satisfaction
+	\item Fear-Confirmed
+	\item Joy
+	\item Distress
+	\item Disappointment
+	\item Relief
+\end{itemize}
+
+And relational emotions can be the following:
+\begin{itemize}
+	\item Happy-for
+	\item Resentment
+	\item Pity
+	\item Gloating
+	\item Gratitude
+	\item Anger
+	\item Gratification
+	\item Remorse	
+\end{itemize}
+
+The intensity ranges from 0 to 1.
+
+\end{document}
