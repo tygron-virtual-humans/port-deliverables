@@ -31,12 +31,12 @@
 % Hyperlinks
 \usepackage{hyperref}
 
-% Prevent hyphenation
-\tolerance=1
-\emergencystretch=\maxdimen
-\hyphenpenalty=10000
-\hbadness=10000
+% References
+\usepackage{apacite}
+\usepackage[round, colon]{natbib}
 
+% Image placement
+\usepackage{float}
 
 %%
 % Set-up packages
@@ -54,8 +54,15 @@
 %\usemintedstyle{colorful}
 %\newminted{java}{breaklines=true}
 
-% References
-\usepackage{apacite}
-\usepackage[round, colon]{natbib}
+% Prevent hyphenation
+\tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
 
-\usepackage{float}
+% Appendix pagenumbering
+\newcommand{\appendixpagenumbering}{
+  \break
+  \pagenumbering{arabic}
+  \renewcommand{\thepage}{\thesection-\arabic{page}}
+}
