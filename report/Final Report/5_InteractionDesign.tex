@@ -1,26 +1,49 @@
 \section{Interaction Design}
-This section contains our interaction design report. It explains who will be the users of the final product, how these users tested the product and what we have learned from the results of these tests.
+This section contains the interaction design report. It contains information about the target audience of the final product, how these people have used the product and what has been learned from the results of these interactions.
 
 \subsection{Users}
-As stated before, our final product is a fully functioning version of GAMYGDALA in the GOAL programming environment. Therefore, our final users will be GOAL programmers who want to use emotions for their GOAL agents. \par
-To find testers we looked for students who were familiar with the GOAL programming language. Because the GOAL programming language is a language that is taught during the first year of the Computer Science bachelor (Logic Based Artificial Intelligence and the Multi Agent Systems project) there are a lot of Computer Science students that are familiar with GOAL. \par
-We decided to ask second year Computer Science bachelor students to help us by trying to use our GAMYGDALA plug-in in GOAL. We chose some students who are also working on our Virtual Humans for Serious Gaming Contextproject, as well as some students who work on other Contextproject. This way we could collect the opinions of students who already know about our product and how it should work, as well as the opinions from students that did not use our product before.
+The final product is a fully functioning version of GAMYGDALA in the GOAL programming environment. GOAL programmers who want to use emotions for their GOAL agents are the target audience of the product.
 
-\subsection{How do we test}
-The best way to let our testers use our product is by just letting them play with it. This is why we asked them to try to give an agent some simple emotions. \par
-For this test we used the Thinking-aloud method \citep{thinking-aloud}. This means that we asked our testers to say anything that came up in their mind during the test. This was the easiest way to find out if the testers enjoyed using our product and if the usage was easy enough.\par
-The set-up of the test was based on the way that students of computer science got taught GOAL in the first place. There was a GAMYGDALA manual including; a overview of GAMYGDALA, a list of GAMYGDALA actions in GOAL and a list of the emotion's which could be returned. Besides the manual there was a test environment built on top of the BlockWorld example project of GOAL. The test environment included the full GAMYGDALA plug-in.
+To properly test user interaction with the GOAL plug-in, testers had to be found with appropriate background knowledge of the GOAL programming language. Because the GOAL is a language that is taught in the first year of the Computer Science bachelor, during the courses Logic Based Artificial Intelligence and Multi Agent Systems project, there are a lot of Computer Science students that are familiar with GOAL.
 
-\pagebreak
+Second year Computer Science bachelor students have been asked to assist in the development by trying to use our GAMYGDALA plug-in in GOAL. Students who are also working on our Virtual Humans for Serious Gaming Contextproject have been selected, as well as students who work on other Contextproject subjects. This way, opinions of students could be collected who already know about the product and how it should work, as well as opinions from students that have not used our product before.
 
-\subsection{Results}
-The results of the test will be divided into a few different points. We will start with the general reaction on the system. Then we will discuss the positive feedback about the GAMYGDALA plug-in and at last we will discuss the improvements which could be made based on the users' feedback.
+\subsection{Test method}
+User interaction is all about users actually using our product and taking opinions on usability and user-friendliness. Because code writing is fairly hard to measure in a meaningful way, the Thinking-aloud method \citep{thinking-aloud} has been used to evaluate user interaction. Testers have been asked to say anything that came up in their minds while using the product. Positive and negative emotions could therefore easily be distinguished. Users were encouraged to express their feelings about all aspects of the product including overall usability, but also about missing features, naming convention and minor other facets. All remarks were noted and the results are discussed in paragraph \ref{subsec:iadres}.
 
-\subsubsection{General reaction}
-The overall reaction on the product was very positive. Everyone has emotions and understands basic emotions. Those maybe two of the reason that when the users started reading the overview of GAMYGDALA they were instantly interested. Many of them already started to imagine what it could mean for computer games if GAMYGDALA was applied to it. Because of the interest of the users, it was very easy for us to discuss certain topics of the systems with the testers. They gave very clear and targeted feedback on certain elements of the system. Most of the feedback was positive, it was very clear for users what GAMYGDALA could do and what the emotions were that they got back. The improvement points were mostly based on haziness of variable names, action names or what the variables exactly meant within the engine. The general conclusion was that GAMYGDALA is very cool, but there needs to be more clearity and a basic understanding of the engine to really get the best out of it.
+The test set-up consisted of a laptop with a working version of SimpleIDE and a BlocksWorld for Teams\footnote{\url{https://github.com/eishub/BW4T}} instance running on a GOAL version extended with GAMYGDALA. Students of Computer Science, familiar with GOAL, were asked to evaluate a sample program and write with additional code for it afterwards. A manual describing GOAL actions, a short GAMYGDALA introduction and a list of all emotions in GAMYGDALA was provided.
+
+\subsection{Test results}
+\label{subsec:iadres}
+This section contains the test results. Firstly, the overall reaction on the product will be reviewed. Secondly, the positive feedback about the GAMYGDALA plug-in is examined and finally the user remarks regarding possible improvements are discussed.
+
+\subsubsection{Overall reaction}
+The overall reaction on the product was very positive. At first, however, certain aspects of GAMYGDALA such as the inner workings with goals, beliefs and likelihoods, were unclear. After clarification, most of the confusion was resolved, but from this can be concluded that a more encompassing introduction to GAMYGDALA is desirable. Users were immediately interested in GAMYGDALA after being fully instructed about the possibilities. They already started to imagine what it could mean for computer games if GAMYGDALA was used in it. Because of their interest, it was very easy to discuss certain topics of the product with the users. They gave very clear and targeted feedback.  Most of it was positive, as discussed in section \ref{subsubsec:iadposfeedb}, but some feedback was about possible improvements, which is explained in section \ref{subsubsec:iadposimprov}. The overall conclusion is that GAMYGDALA is very promising, but a user would need a thorough understanding of the engine to really get the most out of it.
 
 \subsubsection{Positive feedback}
-The positive feedback was generally based on the purpose which GAMYGDALA could have in the (serious) gaming industry. Relations and emotions are really basic elements of life which are not yet fully implemented into (serious) games. Some people directly mentioned the more human taste of non-player characters in-game, if emotions were added to their profile. The GAMYGDALA manual was clear for the users, they did not have questions about what the engine could do. One of the more remarkable reaction about relations was: 'Oh nice, you can even make a relation with non existing persons'. What also gave a positive reaction was the emotion percepts that where given back. It was very clear to the users what the emotions meant and why they were generated by the engine.
+\label{subsubsec:iadposfeedb}
+The positive feedback was generally based on the purpose of GAMYGDALA and the possibilities it opens for the (serious) gaming industry. Relations and emotions are fundamental elements of life which computers are not capable of simulating, and GAMYGDALA was generally seen as a step in the right direction by the users. Some people directly mentioned the positive addition of a more human touch of non-player characters in-game, would emotions be added.\\
 
-\subsubsection{Points for improvement}
-With the feedback from the users came a few points for improvement. A lot of these points were about the naming of actions and variables. The names of these actions and variables, like the 'ga-appraise' action and the 'isMaintenanceGoal' variable, came directly from the original code. Subsequently this was a clear point of improvement. This was because the project team knew these names from working with the system, but for users this is naturally not obvious what they did. The 'ga-appraise' action could be altered to something like 'ga-belief', and the 'isMaintenanceGoal' variable could be changed to something like 'repeatable'. A big point of confusion among users was the likelihood of goals and appraises. The two likelihoods have a different meaning, but this is not clear from the manual or the variable names. After some explanation the users understood the meaning of these variables, but it needs to be clear in the manual and naming. At last we got some points of improvement, not especially for our plug-in, but for the overall GAMYGDALA engine. One of the points was the sensitivity of agents for certain emotions. In real life some people are more affected by positive emotions then by negative emotions or vice versa. Another point was group relation, an overall group state could affect personal emotions. These two points could be implemented in GAMYGDALA in the future.
+\hspace{-\parindent}Additional positive feedback included the following.
+\begin{itemize}
+\item The GAMYGDALA manual is clear for the users. There were few questions about the purpose and content.
+\item The percepts about emotions returned by GAMYGDALA are clear and concise. 
+\item The logic behind GAMYGDALA, the emotion generation, is understandable. The emotions resulting from particular actions are as expected in that situation.
+\item No visible delay was observed while using GAMYGDALA, indicating all necessary calculations are performed quickly.
+\end{itemize}
+
+\subsubsection{Possible improvements}
+\label{subsubsec:iadposimprov}
+With the feedback from the users came a few points for improvement.
+
+Firstly, the naming of actions and variables was unclear. For example, users did not intuitively understand the meaning of the action ``ga-appraise''. ``Appraise'' might be the wrong choice of words, as for example ``ga-event'' or ``ga-value'' are more meaningful action names. Furthermore, the ``isMaintenanceGoal'' variable, which determines whether or not an achieved goal is to be removed from the goal base, was hard to understand by users.
+
+Being the project team which has worked for weeks with the code, the meaning of above action and variable is clear. For new users, however, these names are not descriptive at all. Whether or not this is to be changed in a future version is up for debate, because the working of all actions, methods and variables can be looked up in the manual. It is all the same a good idea to evaluate the naming of unintuitive actions, methods and variables.
+
+Another point of confusion among users was the \textit{likelihood} of goals and beliefs. When appraising an event, the belief as well as the affected goals have a \textit{likelihood}, but each with a different meaning. The difference of these is not clear from the manual or the variable names. Explaining the difference proved to be rather difficult, so a clear explanation in the manual is required.\\
+
+\hspace{-\parindent}Finally, some points of improvement about the working of GAMYGDALA itself were mentioned.
+\begin{itemize}
+\item The sensitivity of agents for certain emotions is currently not adjustable. In real life, some people are more affected by positive emotions than by negative emotions, and vice versa.
+\item The intensity of a relation between two agents in a GAMYGDALA environment is fixed, and does not change based on positive of negative actions by the causal agent of the relation. If another agent consistently undermines your own goals, the intensity of the relation should decrease.
+\end{itemize}
