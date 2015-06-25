@@ -1,3 +1,8 @@
+\documentclass[12pt,a4paper]{article}
+\include{preamble}
+
+\begin{document}
+
 \section{Interaction Design}
 This section contains our interaction design report. It explains who will be the users of the final product, how these users tested the product and what we have learned from the results of these tests.
 
@@ -8,7 +13,58 @@ We decided to ask second year Computer Science bachelor students to help us by t
 
 \subsection{How do we test}
 The best way to let our testers use our product is by just letting them play with it. This is why we asked them to try to give an agent some simple emotions. \par
-For this test we used the Thinking-aloud method \citep{thinking-aloud}. This means that we asked our testers to say anything that came up in their mind during the test. This was the easiest way to find out if the testers enjoyed using our product and if the usage was easy enough.
+For this test we used the Thinking-aloud method \citep{thinking-aloud}. This means that we asked our testers to say anything that came up in their mind during the test. This was the easiest way to find out if the testers enjoyed using our product and if the usage was easy enough.\par
+The set-up of the test was based on the way that students of computer science got taught GOAL in the first place. There was a GAMYGDALA manual including; a overview of GAMYGDALA, a list of GAMYGDALA actions in GOAL and a list of the emotion's which could be returned. Besides the manual there was a test environment built on top of the BlockWorld example project of GOAL. The test environment included the full GAMYGDALA plug-in.
+
+\pagebreak
 
 \subsection{Results}
-The results will be discussed here in the final report. This draft does not contain these results yet.
+The results of the test will be divided into a few different points. We will start with the general reaction on the system. Then we will discuss the positive feedback about the GAMYGDALA plug-in and at last we will discuss the improvements which could be made based on the users' feedback.
+
+\subsubsection{General reaction}
+The overall reaction on the product was very positive. Everyone has emotions and understands basic emotions. Those maybe two of the reason that when the users started reading the overview of GAMYGDALA they were instantly interested. Many of them already started to imagine what it could mean for computer games if GAMYGDALA was applied to it. Because of the interest of the users, it was very easy for us to discuss certain topics of the systems with the testers. They gave very clear and targeted feedback on certain elements of the system. Most of the feedback was positive, it was very clear for users what GAMYGDALA could do and what the emotions were that they got back. The improvement points were mostly based on haziness of variable names, action names or what the variables exactly meant within the engine. The general conclusion was that GAMYGDALA is very cool, but there needs to be more clearity and a basic understanding of the engine to really get the best out of it.
+
+\subsubsection{Positive feedback}
+The positive feedback was generally based on the purpose which GAMYGDALA could have in the (serious) gaming industry. Relations and emotions are really basic elements of life which are not yet fully implemented into (serious) games. Some people directly mentioned the more human taste of non-player characters in-game, if emotions were added to their profile. The GAMYGDALA manual was clear for the users, they did not have questions about what the engine could do. One of the more remarkable reaction about the relation was: 'Oh nice, you can even make a relation with non existing persons'. 
+
+\underline{Millen}
+
+Docs lezen:
+
+\begin{itemize}
+	\item Leest geinteresseerd. Knikt bij wijze van begrip. Lacht in zichzelf.
+	\item Leest Actions.
+	\item Snapt isMaintenanceGoal naam niet. Beschrijving volstaat wel.
+	\item ``Oh nice, je kan zelfs een relatie maken met iemand die niet bestaat. Zoals met God!"
+	\item GoalCongruences naam onduidelijk
+	\item Namen zijn vaak niet straightforward
+	\item `Intensity ranges from 0 to 1' moet eerder, nu staat het na de emotie lijst en daar is het lastiger te vinden.
+\end{itemize}
+
+Programma bekijken:
+
+\begin{itemize}
+	\item Refereert terug naar documentatie om zeker te weten of wat hij in zijn hoofd had klopte.
+	\item Is niet meteen duidelijk dat het voorbeeld alleen om de emotie ging. Voorbeelden dus ook goed highlighten in documentatie.
+	\item Likelihood is steeds redelijk onduidelijk. Millen neemt aan dat et is hoe likely het goal is om te gebeuren. (bij adopt).
+	\item ``Appraise is: er gebeurt iets in de wereld, en die double is hoe erg het de goals affect''. Het is echter de likelihood van de beliefs, dus hoe likely het is dat het belief waar is. Millen begreep dus nog niet helemaal na 1x leen en moet nu weer naar de docs refereren.
+\end{itemize}
+
+Bekijken emoties in belief base:
+
+\begin{itemize}
+	\item ``Bang dat hij het niet gaat halen - fear''
+	\item ``Hope van oh het gaat weer goed''
+	\item ``Best weinig fear voor hoeveel hij misplaced heeft''. Sommige emoties cancelen elkaar uit, maar dat was dus niet vanzelfsprekend en moet expliciet in de documentatie staan.
+\end{itemize}
+
+Millen over gamygdala:
+
+\begin{itemize}
+	\item Verschil tussen negatief en posistief ingestelde mensen moet er zijn, dus negatieve emoties decayen bijv. langzamer dan postieve als je negatief ingesteld bent.
+	\item Emoties kunnen elkaar maskeren: ik kan me bijvoorbeeld slecht voelen, maar dan tijdelijk blij worden als ik iets grappigs zie. Als dat blije dan wegebt voel ik me dan wel opeens weer heel slecht. 
+\end{itemize}
+
+\end{document}
+
+\end{document}
